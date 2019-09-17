@@ -1,2 +1,2 @@
-# java_pft
+# java_testing
 barancev test automating course
