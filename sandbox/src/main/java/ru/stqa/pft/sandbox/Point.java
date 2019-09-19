@@ -1,3 +1,5 @@
+package ru.stqa.pft.sandbox;
+
 import static java.lang.Math.sqrt;
 
 public class Point {
