@@ -1,4 +1,4 @@
-package com.example.tests;
+package com.example.models;
 
 public class ContactData {
     private final String firstName;
