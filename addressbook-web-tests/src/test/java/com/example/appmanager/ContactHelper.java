@@ -11,7 +11,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void submitContactForm() {
-        click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]"));
+        click(By.xpath("(//input[@name='submit'])"));
     }
 
     public void enterFormData(ContactData contactData) {
@@ -20,5 +20,29 @@ public class ContactHelper extends HelperBase {
         type((By.name("address")),(contactData.getAddress()));
         type((By.name("email")),(contactData.getEmail()));
         type((By.name("mobile")),(contactData.getPhone()));
+    }
+
+    public void selectContact() {
+        click(By.name("selected[]"));
+    }
+
+    public void deleteContactFromList() {
+        click(By.xpath("//input[@value='Delete']"));
+    }
+
+    public void deleteContactFromForm() {
+            click((By.xpath("(//input[@name='update'])[3]")));
+    }
+
+    public void submitUpdateForm() {
+        click((By.xpath("(//input[@name='update'])[2]")));
+    }
+
+    public void editContact() {
+            click((By.xpath("//img[@alt=\'Edit\']")));
+    }
+
+    public void submitAlert() {
+        driver.switchTo().alert().accept();
     }
 }
