@@ -14,5 +14,4 @@ public class SessionHelper extends HelperBase {
         type(By.name("pass"), password);
         click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]"));
     }
-
 }

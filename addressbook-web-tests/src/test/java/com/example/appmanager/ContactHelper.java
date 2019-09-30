@@ -15,11 +15,11 @@ public class ContactHelper extends HelperBase {
     }
 
     public void enterFormData(ContactData contactData) {
-        type((By.name("firstname")),(contactData.getFirstName()));
-        type((By.name("lastname")),(contactData.getLastName()));
-        type((By.name("address")),(contactData.getAddress()));
-        type((By.name("email")),(contactData.getEmail()));
-        type((By.name("mobile")),(contactData.getPhone()));
+        type((By.name("firstname")), (contactData.getFirstName()));
+        type((By.name("lastname")), (contactData.getLastName()));
+        type((By.name("address")), (contactData.getAddress()));
+        type((By.name("email")), (contactData.getEmail()));
+        type((By.name("mobile")), (contactData.getPhone()));
     }
 
     public void selectContact() {
@@ -31,7 +31,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void deleteContactFromForm() {
-            click((By.xpath("(//input[@name='update'])[3]")));
+        click((By.xpath("(//input[@name='update'])[3]")));
     }
 
     public void submitUpdateForm() {
@@ -39,10 +39,14 @@ public class ContactHelper extends HelperBase {
     }
 
     public void editContact() {
-            click((By.xpath("//img[@alt=\'Edit\']")));
+        click((By.xpath("//img[@alt=\'Edit\']")));
     }
 
     public void submitAlert() {
         driver.switchTo().alert().accept();
+    }
+
+    public void ReturnToHomePage() {
+        click(By.linkText("home page"));
     }
 }

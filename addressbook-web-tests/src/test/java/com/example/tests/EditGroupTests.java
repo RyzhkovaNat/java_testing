@@ -10,8 +10,8 @@ public class EditGroupTests extends TestBase {
         app.getNavigationHelper().goToGroupPage();
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().editGroup();
-        app.getGroupHelper().fillGroupForm(new GroupData("sample","group","name"));
+        app.getGroupHelper().fillGroupForm(new GroupData("sample", "group", "name"));
         app.getGroupHelper().submitGroupModification();
-        app.getNavigationHelper().goToGroupPageAfterOperation();
+        app.getGroupHelper().ReturnToGroupPage();
     }
 }
