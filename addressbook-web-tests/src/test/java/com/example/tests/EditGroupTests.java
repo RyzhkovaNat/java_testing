@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class EditGroupTests extends TestBase {
 
     @Test
-    public void editGroupTest() throws Exception {
+    public void editGroupTest() {
         app.getNavigationHelper().goToGroupPage();
         app.getGroupHelper().selectGroup();
         app.getGroupHelper().editGroup();

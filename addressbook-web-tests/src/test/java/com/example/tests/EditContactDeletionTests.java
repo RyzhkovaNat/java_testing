@@ -7,7 +7,7 @@ public class EditContactDeletionTests extends TestBase {
     @Test
 
     //Deletes a contact via the contact modification form
-    public void editContactsTest() throws Exception {
+    public void editContactsTest() {
         app.getNavigationHelper().goToHomePage();
         app.getContactHelper().editContact();
         app.getContactHelper().deleteContactFromForm();

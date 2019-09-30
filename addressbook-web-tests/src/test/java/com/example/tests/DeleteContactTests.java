@@ -8,7 +8,7 @@ public class DeleteContactTests extends TestBase {
     @Test
 
     //Deletes a contact from the list of contacts (Home Page)
-    public void deleteContactsTest() throws Exception {
+    public void deleteContactsTest() {
         app.getNavigationHelper().goToHomePage();
         app.getContactHelper().selectContact();
         app.getContactHelper().deleteContactFromList();
