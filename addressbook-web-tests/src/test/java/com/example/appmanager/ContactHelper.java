@@ -2,6 +2,7 @@ package com.example.appmanager;
 
 import com.example.models.ContactData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class ContactHelper extends HelperBase {
@@ -48,5 +49,15 @@ public class ContactHelper extends HelperBase {
 
     public void ReturnToHomePage() {
         click(By.linkText("home page"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent((By.name("selected[]")));
+    }
+
+    public void createContact(ContactData contact) {
+        enterFormData(contact);
+        submitContactForm();
+        ReturnToHomePage();
     }
 }
