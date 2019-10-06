@@ -7,8 +7,11 @@ import org.openqa.selenium.WebDriver;
 
 public class ContactHelper extends HelperBase {
 
+    private NavigationHelper navigationHelper;
+
     public ContactHelper(WebDriver driver) {
         super(driver);
+        navigationHelper = new NavigationHelper(driver);
     }
 
     public void submitContactForm() {
@@ -56,6 +59,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void createContact(ContactData contact) {
+        navigationHelper.goToContactForm();
         enterFormData(contact);
         submitContactForm();
         ReturnToHomePage();

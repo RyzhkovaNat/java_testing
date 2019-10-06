@@ -21,7 +21,7 @@ public class HelperBase {
         driver.findElement(locator).sendKeys(text);
     }
 
-    public boolean isElementPresent(By locator) {
+    protected boolean isElementPresent(By locator) {
         try {
             driver.findElement(locator);
             return true;
