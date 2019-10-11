@@ -3,7 +3,7 @@ package com.example.tests;
 import com.example.models.ContactData;
 import org.testng.annotations.Test;
 
-public class EditContactDeletionTests extends TestBase {
+public class DeleteContactFromFormTests extends TestBase {
 
     @Test
 

@@ -35,11 +35,11 @@ public class ContactHelper extends HelperBase {
     }
 
     public void deleteContactFromForm() {
-        click((By.xpath("(//input[@name='update'])[3]")));
+        click((By.xpath("(//input[@value='Delete'])")));
     }
 
     public void submitUpdateForm() {
-        click((By.xpath("(//input[@name='update'])[2]")));
+        click((By.xpath("(//input[@value='Update'])")));
     }
 
     public void editContact() {

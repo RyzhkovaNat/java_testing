@@ -5,7 +5,7 @@ import com.example.models.GroupData;
 import org.testng.annotations.Test;
 
 
-public class DeleteContactTests extends TestBase {
+public class DeleteContactFromListTests extends TestBase {
 
     @Test
 
