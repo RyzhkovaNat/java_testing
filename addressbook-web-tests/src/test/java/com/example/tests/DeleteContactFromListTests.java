@@ -2,7 +2,10 @@ package com.example.tests;
 
 import com.example.models.ContactData;
 import com.example.models.GroupData;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 
 public class DeleteContactFromListTests extends TestBase {
@@ -15,8 +18,14 @@ public class DeleteContactFromListTests extends TestBase {
         if (! app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData("Anna", "Smith", "Test Address", "ann@mail.com", "895678567857"));
         }
-        app.getContactHelper().selectContact();
+        List<ContactData> before = app.getContactHelper().getContactList();
+        app.getContactHelper().selectContact(before.size() - 1);
         app.getContactHelper().deleteContactFromList();
         app.getContactHelper().submitAlert();
+        List<ContactData> after = app.getContactHelper().getContactList();
+        Assert.assertEquals(after.size(), before.size()-1);
+
+        before.remove(before.size()-1);
+        Assert.assertEquals(before, after);
     }
 }
