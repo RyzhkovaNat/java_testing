@@ -1,9 +1,7 @@
 package com.example.appmanager;
 
 import com.example.models.ContactData;
-import com.example.models.GroupData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

@@ -1,7 +1,6 @@
 package com.example.tests;
 
 import com.example.models.ContactData;
-import com.example.models.GroupData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +14,7 @@ public class DeleteContactFromListTests extends TestBase {
     //Deletes a contact from the list of contacts (Home Page)
     public void deleteContactsTest() {
         app.getNavigationHelper().goToHomePage();
-        if (! app.getContactHelper().isThereAContact()) {
+        if (!app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData("Anna", "Smith", "Test Address", "ann@mail.com", "895678567857"));
         }
         List<ContactData> before = app.getContactHelper().getContactList();
@@ -24,9 +23,9 @@ public class DeleteContactFromListTests extends TestBase {
         app.getContactHelper().submitAlert();
         app.getNavigationHelper().goToHomePage();
         List<ContactData> after = app.getContactHelper().getContactList();
-        Assert.assertEquals(after.size(), before.size()-1);
+        Assert.assertEquals(after.size(), before.size() - 1);
 
-        before.remove(before.size()-1);
+        before.remove(before.size() - 1);
         Assert.assertEquals(before, after);
     }
 }

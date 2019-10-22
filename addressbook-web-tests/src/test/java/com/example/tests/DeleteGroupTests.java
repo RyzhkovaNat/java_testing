@@ -11,7 +11,7 @@ public class DeleteGroupTests extends TestBase {
     @Test
     public void deleteGroupTest() {
         app.getNavigationHelper().goToGroupPage();
-        if (! app.getGroupHelper().isThereAGroup()) {
+        if (!app.getGroupHelper().isThereAGroup()) {
             app.getGroupHelper().createGroup(new GroupData("test10", "testheader", "testfooter"));
         }
         List<GroupData> before = app.getGroupHelper().getGroupList();

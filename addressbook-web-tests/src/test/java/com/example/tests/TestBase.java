@@ -1,9 +1,9 @@
 package com.example.tests;
 
 import com.example.appmanager.ApplicationManager;
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.openqa.selenium.remote.BrowserType;
 
 public class TestBase {
 

@@ -1,7 +1,6 @@
 package com.example.tests;
 
 import com.example.models.ContactData;
-import com.example.models.GroupData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +15,7 @@ public class AddContactTests extends TestBase {
         ContactData contact = new ContactData("Anna", "Smith", "Test Address", "ann@mail.com", "895678567857");
         app.getContactHelper().createContact(contact);
         List<ContactData> after = app.getContactHelper().getContactList();
-        Assert.assertEquals(after.size(), before.size()+1);
+        Assert.assertEquals(after.size(), before.size() + 1);
 
         before.add(contact);
         Comparator<? super ContactData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
