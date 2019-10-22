@@ -18,7 +18,7 @@ public class DeleteContactFromFormTests extends TestBase {
             app.getContactHelper().createContact(new ContactData("Anna", "Smith", "Test Address", "ann@mail.com", "895678567857"));
         }
         List<ContactData> before = app.getContactHelper().getContactList();
-        app.getContactHelper().editContact();
+        app.getContactHelper().editContact(before.size()-1);
         app.getContactHelper().deleteContactFromForm();
         List<ContactData> after = app.getContactHelper().getContactList();
         Assert.assertEquals(after.size(), before.size() - 1);
