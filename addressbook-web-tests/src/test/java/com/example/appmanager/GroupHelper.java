@@ -37,11 +37,11 @@ public class GroupHelper extends HelperBase {
     }
 
     public void deleteGroup() {
-        click(By.xpath("(//input[@name='delete'])[2]"));
+        click(By.name("delete"));
     }
 
     public void editGroup() {
-        click(By.xpath("(//input[@name=\'edit\'])[2]"));
+        click(By.name("edit"));
     }
 
     public void submitGroupModification() {
