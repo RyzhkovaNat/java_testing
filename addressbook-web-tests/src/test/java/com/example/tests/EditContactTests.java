@@ -13,7 +13,7 @@ public class EditContactTests extends TestBase {
 
     //Changes contact data via the contact modification form
     public void editContactsTest() {
-        app.getNavigationHelper().goToHomePage();
+        app.goTo().goToHomePage();
         if (!app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData("Anna", "Smith", "Test Address", "ann@mail.com", "895678567857"));
         }

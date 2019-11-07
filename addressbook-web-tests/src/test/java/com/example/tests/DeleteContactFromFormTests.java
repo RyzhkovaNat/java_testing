@@ -12,14 +12,14 @@ public class DeleteContactFromFormTests extends TestBase {
 
     //Deletes a contact via the contact modification form
     public void editContactsTest() {
-        app.getNavigationHelper().goToHomePage();
+        app.goTo().goToHomePage();
         if (!app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData("Anna", "Smith", "Test Address", "ann@mail.com", "895678567857"));
         }
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().editContact(before.size() - 1);
         app.getContactHelper().deleteContactFromForm();
-        app.getNavigationHelper().goToHomePage();
+        app.goTo().goToHomePage();
         List<ContactData> after = app.getContactHelper().getContactList();
         Assert.assertEquals(after.size(), before.size() - 1);
 
