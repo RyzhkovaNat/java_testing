@@ -21,7 +21,7 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("(//input[@name='submit'])"));
     }
 
-    public void enterFormData(ContactData contactData) {
+    public void populate(ContactData contactData) {
         type((By.name("firstname")), (contactData.getFirstName()));
         type((By.name("lastname")), (contactData.getLastName()));
         type((By.name("address")), (contactData.getAddress()));
@@ -29,19 +29,35 @@ public class ContactHelper extends HelperBase {
         type((By.name("mobile")), (contactData.getPhone()));
     }
 
-    public void selectContact(int index) {
+    public void edit(int index, ContactData contact) {
+        editContact(index);
+        populate(contact);
+        submit();
+        ReturnToHomePage();
+    }
+
+    public void deleteFromList(int index) {
+        select(index);
+        delete();
+        submitAlert();
+        navigationHelper.homePage();
+    }
+
+    public void deleteFromForm(int index) {
+        editContact(index);
+        delete();
+        navigationHelper.homePage();
+    }
+
+    public void select(int index) {
         driver.findElements(By.name("selected[]")).get(index).click();
     }
 
-    public void deleteContactFromList() {
+    public void delete() {
         click(By.xpath("//input[@value='Delete']"));
     }
 
-    public void deleteContactFromForm() {
-        click((By.xpath("(//input[@value='Delete'])")));
-    }
-
-    public void submitUpdateForm() {
+    public void submit() {
         click((By.xpath("(//input[@value='Update'])")));
     }
 
@@ -61,9 +77,9 @@ public class ContactHelper extends HelperBase {
         return isElementPresent((By.name("selected[]")));
     }
 
-    public void createContact(ContactData contact) {
+    public void create(ContactData contact) {
         navigationHelper.goToContactForm();
-        enterFormData(contact);
+        populate(contact);
         submitContactForm();
         ReturnToHomePage();
     }
@@ -75,7 +91,7 @@ public class ContactHelper extends HelperBase {
             String firstName = element.findElement(By.cssSelector("td:nth-child(3)")).getText();
             String lastName = element.findElement(By.cssSelector("td:nth-child(2)")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            ContactData contact = new ContactData(id, firstName, lastName, null, null, null);
+            ContactData contact = new ContactData().withId(id).withFirstName(firstName).withLastName(lastName).withEmail(null).withAddress(null).withPhone(null);
             contacts.add(contact);
         }
         return contacts;
