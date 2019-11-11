@@ -2,17 +2,12 @@ package com.example.tests;
 
 import com.example.models.GroupData;
 import com.example.models.Groups;
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.Set;
-
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.*;
-import static org.testng.Assert.*;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 
 public class EditGroupTests extends TestBase {
 
@@ -32,7 +27,7 @@ public class EditGroupTests extends TestBase {
                 .withId(modifiedGroup.getId()).withName("sample").withHeader("group").withFooter("name");
         app.group().modify(group);
         Groups after = app.group().all();
-        assertEquals(after.size(), before.size());
+        assertThat(after.size(),  equalTo(before.size()));
         assertThat(after, equalTo(before.without(modifiedGroup).withAdded(group)));
     }
 }

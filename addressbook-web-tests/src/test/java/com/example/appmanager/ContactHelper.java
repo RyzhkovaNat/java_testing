@@ -1,11 +1,11 @@
 package com.example.appmanager;
 
 import com.example.models.ContactData;
+import com.example.models.Contacts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ContactHelper extends HelperBase {
@@ -29,28 +29,15 @@ public class ContactHelper extends HelperBase {
         type((By.name("mobile")), (contactData.getPhone()));
     }
 
-    public void edit(int index, ContactData contact) {
-        editContact(index);
+    public void edit(ContactData contact) {
+        editContactById(contact.getId());
         populate(contact);
         submit();
         ReturnToHomePage();
     }
 
-    public void deleteFromList(int index) {
-        select(index);
-        delete();
-        submitAlert();
-        navigationHelper.homePage();
-    }
-
-    public void deleteFromForm(int index) {
-        editContact(index);
-        delete();
-        navigationHelper.homePage();
-    }
-
-    public void select(int index) {
-        driver.findElements(By.name("selected[]")).get(index).click();
+    public void selectById(int id) {
+        driver.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
     public void delete() {
@@ -61,8 +48,8 @@ public class ContactHelper extends HelperBase {
         click((By.xpath("(//input[@value='Update'])")));
     }
 
-    public void editContact(int index) {
-        driver.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+    public void editContactById(int id) {
+        driver.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();
     }
 
     public void submitAlert() {
@@ -84,8 +71,21 @@ public class ContactHelper extends HelperBase {
         ReturnToHomePage();
     }
 
-    public List<ContactData> getContactList() {
-        List<ContactData> contacts = new ArrayList<ContactData>();
+    public void deleteFromForm(ContactData contact) {
+        editContactById(contact.getId());
+        delete();
+        navigationHelper.homePage();
+    }
+
+    public void deleteFromList(ContactData contact) {
+        selectById(contact.getId());
+        delete();
+        submitAlert();
+        navigationHelper.homePage();
+    }
+
+    public Contacts all() {
+        Contacts contacts = new Contacts();
         List<WebElement> elements = driver.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement element : elements) {
             String firstName = element.findElement(By.cssSelector("td:nth-child(3)")).getText();

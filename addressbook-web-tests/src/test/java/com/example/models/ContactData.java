@@ -54,6 +54,16 @@ public class ContactData {
         return this;
     }
 
+    public ContactData withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public ContactData withPhone(String phone) {
+        this.phone = phone;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,16 +77,6 @@ public class ContactData {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, id);
-    }
-
-    public ContactData withEmail(String email) {
-        this.email = email;
-        return this;
-    }
-
-    public ContactData withPhone(String phone) {
-        this.phone = phone;
-        return this;
     }
 
     @Override
