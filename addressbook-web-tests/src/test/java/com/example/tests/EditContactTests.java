@@ -15,7 +15,7 @@ public class EditContactTests extends TestBase {
     public void ensurePreconditions() {
         app.goTo().homePage();
         if (app.contact().all().size() == 0) {
-            app.contact().create(new ContactData().withFirstName("Anna").withLastName("Smith").withAddress("Test Address").withEmail("ann@mail.com").withPhone("895678567857"));
+            app.contact().create(new ContactData().withFirstName("Anna").withLastName("Smith").withAddress("Test Address").withEmail("ann@mail.com").withWorkPhone("833333333332395").withMobilePhone("8438394927383").withHomePhone("83029474202"));
         }
     }
 
@@ -26,7 +26,7 @@ public class EditContactTests extends TestBase {
         Contacts before = app.contact().all();
         ContactData editedContact = before.iterator().next();
         ContactData contact = new ContactData()
-                .withId(editedContact.getId()).withFirstName("Lana").withLastName("Stales").withAddress("Test Address2").withEmail("lana@mail.com").withPhone("895344332234");
+                .withId(editedContact.getId()).withFirstName("Lana").withLastName("Stales").withAddress("Test Address2").withEmail("lana@mail.com").withWorkPhone("1").withMobilePhone("2").withHomePhone("3");
         app.contact().edit(contact);
         Contacts after = app.contact().all();
         assertThat(after.size(),  equalTo(before.size()));
