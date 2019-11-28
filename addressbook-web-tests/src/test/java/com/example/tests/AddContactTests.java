@@ -2,19 +2,41 @@ package com.example.tests;
 
 import com.example.models.ContactData;
 import com.example.models.Contacts;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AddContactTests extends TestBase {
 
-    @Test
-    public void testAddContact() {
+    @DataProvider
+    public Iterator<Object[]> validContacts() throws IOException {
+        List<Object[]> list = new ArrayList<Object[]>();
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resourses/contacts.csv")));
+        String line = reader.readLine();
+        while (line != null) {
+            String[] split = line.split(";");
+            list.add(new Object[]{new ContactData().withFirstName(split[0]).withLastName(split[1]).withAddress(split[2]).withEmail(split[3]).withMobilePhone(split[4]).withHomePhone(split[5]).withWorkPhone(split[6])});
+            line = reader.readLine();
+        }
+        return list.iterator();
+    }
+
+    @Test(dataProvider = "validContacts")
+    public void testAddContact(ContactData contact) {
+        app.goTo().homePage();
         Contacts before = app.contact().all();
-        ContactData contact =
-                new ContactData().withFirstName("Anna").withLastName("Smith").withAddress("Test Address").withEmail("ann@mail.com").withWorkPhone("833333333332395").withMobilePhone("8438394927383").withHomePhone("83029474202");
         app.contact().create(contact);
+        app.goTo().homePage();
         Contacts after = app.contact().all();
         assertThat(after.size(), equalTo(before.size() + 1));
         assertThat(after, equalTo(

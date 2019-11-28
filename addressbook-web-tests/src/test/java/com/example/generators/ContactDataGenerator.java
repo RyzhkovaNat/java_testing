@@ -58,10 +58,9 @@ public class ContactDataGenerator {
     }
 
     private void saveAsCSV(List<ContactData> contacts, File file) throws IOException {
-        System.out.println(new File(".").getAbsolutePath());
         Writer writer = new FileWriter(file);
         for (ContactData contact : contacts) {
-            writer.write(String.format("%s, %s, %s, %s, %s, %s, %s\n", contact.getFirstName(), contact.getLastName(), contact.getAddress(), contact.getEmail(), contact.getMobilePhone(), contact.getHomePhone(), contact.getWorkPhone()));
+            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getLastName(), contact.getAddress(), contact.getEmail(), contact.getMobilePhone(), contact.getHomePhone(), contact.getWorkPhone()));
         }
         writer.close();
     }

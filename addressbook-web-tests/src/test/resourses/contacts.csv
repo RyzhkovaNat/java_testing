@@ -1,10 +1,5 @@
-test name 0, test surname 0, address 0, email 0, 123450, 678900, 135790
-test name 1, test surname 1, address 1, email 1, 123451, 678901, 135791
-test name 2, test surname 2, address 2, email 2, 123452, 678902, 135792
-test name 3, test surname 3, address 3, email 3, 123453, 678903, 135793
-test name 4, test surname 4, address 4, email 4, 123454, 678904, 135794
-test name 5, test surname 5, address 5, email 5, 123455, 678905, 135795
-test name 6, test surname 6, address 6, email 6, 123456, 678906, 135796
-test name 7, test surname 7, address 7, email 7, 123457, 678907, 135797
-test name 8, test surname 8, address 8, email 8, 123458, 678908, 135798
-test name 9, test surname 9, address 9, email 9, 123459, 678909, 135799
+test name 0;test surname 0;address 0;email 0;123450;678900;135790
+test name 1;test surname 1;address 1;email 1;123451;678901;135791
+test name 2;test surname 2;address 2;email 2;123452;678902;135792
+test name 3;test surname 3;address 3;email 3;123453;678903;135793
+test name 4;test surname 4;address 4;email 4;123454;678904;135794
