@@ -6,8 +6,7 @@
     "email": "email 0",
     "homePhone": "678900",
     "workPhone": "135790",
-    "mobilePhone": "123450",
-    "id": 2147483647
+    "mobilePhone": "123450"
   },
   {
     "firstName": "test name 1",
@@ -16,8 +15,7 @@
     "email": "email 1",
     "homePhone": "678901",
     "workPhone": "135791",
-    "mobilePhone": "123451",
-    "id": 2147483647
+    "mobilePhone": "123451"
   },
   {
     "firstName": "test name 2",
@@ -26,8 +24,7 @@
     "email": "email 2",
     "homePhone": "678902",
     "workPhone": "135792",
-    "mobilePhone": "123452",
-    "id": 2147483647
+    "mobilePhone": "123452"
   },
   {
     "firstName": "test name 3",
@@ -36,8 +33,7 @@
     "email": "email 3",
     "homePhone": "678903",
     "workPhone": "135793",
-    "mobilePhone": "123453",
-    "id": 2147483647
+    "mobilePhone": "123453"
   },
   {
     "firstName": "test name 4",
@@ -46,57 +42,6 @@
     "email": "email 4",
     "homePhone": "678904",
     "workPhone": "135794",
-    "mobilePhone": "123454",
-    "id": 2147483647
-  },
-  {
-    "firstName": "test name 5",
-    "lastName": "test surname 5",
-    "address": "address 5",
-    "email": "email 5",
-    "homePhone": "678905",
-    "workPhone": "135795",
-    "mobilePhone": "123455",
-    "id": 2147483647
-  },
-  {
-    "firstName": "test name 6",
-    "lastName": "test surname 6",
-    "address": "address 6",
-    "email": "email 6",
-    "homePhone": "678906",
-    "workPhone": "135796",
-    "mobilePhone": "123456",
-    "id": 2147483647
-  },
-  {
-    "firstName": "test name 7",
-    "lastName": "test surname 7",
-    "address": "address 7",
-    "email": "email 7",
-    "homePhone": "678907",
-    "workPhone": "135797",
-    "mobilePhone": "123457",
-    "id": 2147483647
-  },
-  {
-    "firstName": "test name 8",
-    "lastName": "test surname 8",
-    "address": "address 8",
-    "email": "email 8",
-    "homePhone": "678908",
-    "workPhone": "135798",
-    "mobilePhone": "123458",
-    "id": 2147483647
-  },
-  {
-    "firstName": "test name 9",
-    "lastName": "test surname 9",
-    "address": "address 9",
-    "email": "email 9",
-    "homePhone": "678909",
-    "workPhone": "135799",
-    "mobilePhone": "123459",
-    "id": 2147483647
+    "mobilePhone": "123454"
   }
 ]
