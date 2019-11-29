@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="Groups" >
+        <classes>
+            <class name="com.example.tests.GroupCreationTests" />
+            <class name="com.example.tests.DeleteGroupTests" />
+            <class name="com.example.tests.EditGroupTests" />
+        </classes>
+    </test>
+
+    <test name="Contacts">
+        <classes>
+            <class name="com.example.tests.AddContactTests" />
+            <class name="com.example.tests.DeleteContactFromFormTests" />
+            <class name="com.example.tests.DeleteContactFromListTests" />
+            <class name="com.example.tests.EditContactTests" />
+        </classes>
+    </test>
+</suite>

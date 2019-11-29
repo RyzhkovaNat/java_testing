@@ -11,3 +11,15 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.beust:jcommander:1.78'
 }
+
+task testAllCrud(type: Test) {
+    useTestNG {
+        suites 'src/test/resourses/testng.xml'
+    }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
+}
