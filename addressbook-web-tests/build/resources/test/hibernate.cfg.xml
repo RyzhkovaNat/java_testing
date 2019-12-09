@@ -53,6 +53,7 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="com.example.models.GroupData"/>
+        <mapping class="com.example.models.ContactData"/>
 
     </session-factory>
 

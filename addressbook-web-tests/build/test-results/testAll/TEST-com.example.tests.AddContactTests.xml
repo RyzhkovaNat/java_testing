@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.tests.AddContactTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-11-29T09:41:11" hostname="N1533SK" time="27.431">
+  <properties/>
+  <testcase name="testAddContact[0](ContactData{firstName='test name 0', lastName='test surname 0', id=2147483647})" classname="com.example.tests.AddContactTests" time="4.743"/>
+  <testcase name="testAddContact[1](ContactData{firstName='test name 1', lastName='test surname 1', id=2147483647})" classname="com.example.tests.AddContactTests" time="4.934"/>
+  <testcase name="testAddContact[2](ContactData{firstName='test name 2', lastName='test surname 2', id=2147483647})" classname="com.example.tests.AddContactTests" time="5.349"/>
+  <testcase name="testAddContact[3](ContactData{firstName='test name 3', lastName='test surname 3', id=2147483647})" classname="com.example.tests.AddContactTests" time="5.89"/>
+  <testcase name="testAddContact[4](ContactData{firstName='test name 4', lastName='test surname 4', id=2147483647})" classname="com.example.tests.AddContactTests" time="6.514"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1575020468553	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\NATALY~1\\AppData\\Local\\Temp\\rust_mozprofileHCysYK"
+1575020469011	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575020469011	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575020469011	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575020469011	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1575020470589	Marionette	INFO	Listening on port 56498
+1575020470690	Marionette	WARN	TLS certificate errors will be ignored for this session
+ноя 29, 2019 12:41:10 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

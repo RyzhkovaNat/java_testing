@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.tests.DeleteContactFromListTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-29T09:41:53" hostname="N1533SK" time="2.963">
+  <properties/>
+  <testcase name="deleteContactsTest" classname="com.example.tests.DeleteContactFromListTests" time="2.963"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1575020509149	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\NATALY~1\\AppData\\Local\\Temp\\rust_mozprofilet8Rc0B"
+1575020509591	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1575020509591	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1575020509591	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1575020509592	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1575020511137	Marionette	INFO	Listening on port 56636
+1575020511292	Marionette	WARN	TLS certificate errors will be ignored for this session
+ноя 29, 2019 12:41:51 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

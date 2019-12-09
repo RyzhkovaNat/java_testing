@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.tests.AddContactTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-12-06T09:38:21" hostname="N1533SK" time="61.272">
+  <properties/>
+  <testcase name="testAddContact[0](ContactData{firstName='test name 0', lastName='test surname 0', id=2147483647})" classname="com.example.tests.AddContactTests" time="10.942"/>
+  <testcase name="testAddContact[1](ContactData{firstName='test name 1', lastName='test surname 1', id=2147483647})" classname="com.example.tests.AddContactTests" time="12.098"/>
+  <testcase name="testAddContact[2](ContactData{firstName='test name 2', lastName='test surname 2', id=2147483647})" classname="com.example.tests.AddContactTests" time="12.41"/>
+  <testcase name="testAddContact[3](ContactData{firstName='test name 3', lastName='test surname 3', id=2147483647})" classname="com.example.tests.AddContactTests" time="12.559"/>
+  <testcase name="testAddContact[4](ContactData{firstName='test name 4', lastName='test surname 4', id=2147483647})" classname="com.example.tests.AddContactTests" time="13.261"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}) on port 25424
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1575625099.604][WARNING]: This version of ChromeDriver has not been tested with Chrome version 78.
+дек 06, 2019 12:38:20 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

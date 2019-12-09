@@ -24,7 +24,7 @@ public class AddContactTests extends TestBase {
     @DataProvider
     public Iterator<Object[]> validContactsFromCSV() throws IOException {
         List<Object[]> list = new ArrayList<Object[]>();
-        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resourses/contacts.csv")));
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.csv")));
         String line = reader.readLine();
         while (line != null) {
             String[] split = line.split(";");
@@ -37,7 +37,7 @@ public class AddContactTests extends TestBase {
     @DataProvider
     public Iterator<Object[]> validGroupsFromJSON() throws IOException {
         List<Object[]> list = new ArrayList<Object[]>();
-        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resourses/contacts.json")));
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.json")));
         String json = "";
         String line = reader.readLine();
         while (line != null) {
@@ -52,10 +52,10 @@ public class AddContactTests extends TestBase {
     @Test(dataProvider = "validGroupsFromJSON")
     public void testAddContact(ContactData contact) {
         app.goTo().homePage();
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         app.contact().create(contact);
         app.goTo().homePage();
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after.size(), equalTo(before.size() + 1));
         assertThat(after, equalTo(
                 before.withAdded(contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));

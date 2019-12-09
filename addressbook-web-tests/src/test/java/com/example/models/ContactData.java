@@ -1,25 +1,66 @@
 package com.example.models;
 
 import com.google.gson.annotations.Expose;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name="addressbook")
 public class ContactData {
     @Expose
+    @Column(name="firstname")
     private String firstName;
     @Expose
+    @Column(name="lastname")
     private String lastName;
     @Expose
+    @Column(name="address")
+    @Type(type="text")
     private String address;
     @Expose
+    @Column(name="email")
+    @Type(type="text")
     private String email;
     @Expose
+    @Column(name="home")
+    @Type(type="text")
     private String homePhone;
     @Expose
+    @Column(name="work")
+    @Type(type="text")
     private String workPhone;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ContactData that = (ContactData) o;
+        return id == that.id &&
+                Objects.equals(firstName, that.firstName) &&
+                Objects.equals(lastName, that.lastName) &&
+                Objects.equals(address, that.address) &&
+                Objects.equals(email, that.email) &&
+                Objects.equals(homePhone, that.homePhone) &&
+                Objects.equals(workPhone, that.workPhone) &&
+                Objects.equals(mobilePhone, that.mobilePhone) &&
+                Objects.equals(allPhones, that.allPhones);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, address, email, homePhone, workPhone, mobilePhone, allPhones, id);
+    }
+
     @Expose
+    @Column(name="mobile")
+    @Type(type="text")
     private String mobilePhone;
+    @Transient
     private String allPhones;
+    @Id
+    @Column(name="id")
     private int id = Integer.MAX_VALUE;
 
     public String getFirstName() {
@@ -101,21 +142,6 @@ public class ContactData {
     public ContactData withWorkPhone(String phone) {
         this.workPhone = phone;
         return this;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ContactData that = (ContactData) o;
-        return id == that.id &&
-                Objects.equals(firstName, that.firstName) &&
-                Objects.equals(lastName, that.lastName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName, id);
     }
 
     @Override

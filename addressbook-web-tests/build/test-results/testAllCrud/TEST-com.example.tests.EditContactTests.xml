@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.tests.EditContactTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-06T09:40:09" hostname="N1533SK" time="9.835">
+  <properties/>
+  <testcase name="editContactsTest" classname="com.example.tests.EditContactTests" time="9.835"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}) on port 2365
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1575625202.345][WARNING]: This version of ChromeDriver has not been tested with Chrome version 78.
+дек 06, 2019 12:40:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
